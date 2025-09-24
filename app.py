@@ -103,6 +103,13 @@ def internal_error(error):
                          error_code=500, 
                          error_message="Internal server error"), 500
 
+@app.route('/api/name')
+def api_name():
+    """Return the name"""
+    return jsonify({
+        'name': 'Norman Babiak',
+    })
+
 if __name__ == '__main__':
     # Get port from environment variable (Rahti sets this)
     port = int(os.environ.get('PORT', 8080))
